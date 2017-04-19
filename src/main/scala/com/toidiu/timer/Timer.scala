@@ -6,17 +6,16 @@ import scala.concurrent.duration._
 
 object Timer {
 
-  def main(args: Array[String]): Unit = {
-    start(5 second, HelloExecute)
+  private val t = new Timer(false)
 
-    def start(duration: FiniteDuration, e: TimerExecute): Timer = {
-      val t = new Timer(false)
-      t.schedule(new TimerTask {
-        override def run(): Unit = e.execute
-      }, 0, duration.toMillis)
-      t
-    }
+  def start(duration: FiniteDuration, e: TimerExecute): Timer = {
+    t.schedule(new TimerTask {
+      override def run(): Unit = e.execute
+    }, 0, duration.toMillis)
+    t
   }
+
+  def shutdown = t.cancel()
 
 }
 
@@ -24,6 +23,3 @@ trait TimerExecute {
   def execute: Unit
 }
 
-object HelloExecute extends TimerExecute {
-  def execute: Unit = println("hello")
-}
