@@ -18,6 +18,7 @@ wiki
 .DS_Store
 *.log
 *.keystore
+*.swp
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
