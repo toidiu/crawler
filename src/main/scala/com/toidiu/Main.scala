@@ -13,7 +13,6 @@ object Main extends App {
 
   sys.addShutdownHook{
     Timer.shutdown
-    ScrapeExecute.shutdown
   }
 
 }
