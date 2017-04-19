@@ -1,0 +1,26 @@
+logs
+project/project
+project/target
+target
+tmp
+.history
+public/dist/*.js*
+/.idea
+/*.iml
+/out
+/.idea_modules
+/.classpath
+/.project
+/RUNNING_PID
+/.settings
+node_modules
+wiki
+.DS_Store
+*.log
+*.keystore
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+
+secret.conf
+tryScala.sc
